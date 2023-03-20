@@ -47,15 +47,24 @@ function getFetch() {
                         let seasonEpisodes = `https://api.tvmaze.com/seasons/${season.id}/episodes`;
                         console.log(`Season: ${season.number}, ID: ${season.id}`);
                         const li = document.createElement('li');
-                        li.textContent = `Season ${season.number}`;
+                        li.textContent = `Season: ${season.number}`;
                         seasonList.appendChild(li);
-                        console.log(seasonList);
+                      
 
                         //
                         fetch(seasonEpisodes)
                             .then(res => res.json()) // parse response as JSON
                             .then(data => {
-                                console.log(data);
+                                data.forEach(episode => {
+                                    console.log(episode.season);
+                                    if (episode.season === season.number){
+                                        console.log(`Season ${season.number}, Episode: ${episode.number}: ${episode.name}`)
+                                    }
+                                })
+                             
+                               
+                             
+                           
                             })
                         //
                     })
