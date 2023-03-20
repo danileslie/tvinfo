@@ -48,25 +48,7 @@ function getFetch() {
                         console.log(`Season: ${season.number}, ID: ${season.id}`);
                         const li = document.createElement('li');
                         li.textContent = `Season: ${season.number}`;
-                        seasonList.appendChild(li);
-                      
-
-                        //
-                        fetch(seasonEpisodes)
-                            .then(res => res.json()) // parse response as JSON
-                            .then(data => {
-                                data.forEach(episode => {
-                                    console.log(episode.season);
-                                    if (episode.season === season.number){
-                                        console.log(`Season ${season.number}, Episode: ${episode.number}: ${episode.name}`)
-                                    }
-                                })
-                             
-                               
-                             
-                           
-                            })
-                        //
+                        seasonList.appendChild(li);                  
                     })
                 })
                 .catch(err => {
@@ -74,3 +56,4 @@ function getFetch() {
                 });
         })
 }
+
