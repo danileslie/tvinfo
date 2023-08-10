@@ -1,8 +1,124 @@
+/* =================================== */
+/*             PAGE BASE               */
+/* =================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    display: grid;
+    min-height: 100vh;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* Core sizes */
+
+:root {
+    --size-01: 0.25rem;
+    --size-02: 0.5rem;
+    --size-03: 0.75rem;
+    --size-04: 1rem;
+    --size-05: 1.5rem;
+    --size-06: 2rem;
+    --size-07: 3rem;
+    --size-08: 4rem;
+    --size-09: 5rem;
+}
+
+
 body{
     padding: 0;
     margin: 0;
+    text-align: center;
+}
+
+input[type="text"]{
+    font-size: var(--size-05);
+}
+
+img{
+    display: block;
 }
 
 #poster{
     width: 25%;
+    margin: auto;
+    margin-bottom: var(--size-04);
+}
+
+#description{
+    width: 50%;
+    margin: auto;
+    font-size: var(--size-05);
+    margin-bottom: var(--size-04);
+    border: 1px solid;
+    border-radius: 8px;
+    padding: var(--size-04);
+}
+
+
+.showSelection, input, button{
+    padding: var(--size-04);
+}
+
+.showSelection{
+    display: flex;
+    justify-content: center;
+   
+}
+
+.showInfo{
+    display: none;
+}
+
+input, button{
+    border: 1px solid;
+}
+
+input{
+    border-radius: 8px 0 0 8px;
+}
+
+button{
+    border-radius: 0 8px 8px 0;
+}
+
+.titleAndRun{
+    border: 1px solid;
+    border-radius: 8px;
+    width: 25%;
+    margin: auto;
+    margin-bottom: var(--size-04);
+}
+
+
+#title{
+    padding: var(--size-05);
+    font-size: var(--size-06);
+}
+
+.runtime{
+    display: block;
+    padding: var(--size-05);
+    font-size: var(--size-05);
+    background: rgb(150, 150, 161);
+    
+}
+
+#avgRuntime{
+    display: block;
+    padding: var(--size-05); 
+}
+
+#showStart, #showEnd{
+    display: inline-block;
+    padding: var(--size-05);
 }
